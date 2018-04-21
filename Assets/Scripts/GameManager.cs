@@ -8,6 +8,9 @@ public class GameManager : MonoBehaviour {
     public static GameManager instance;
     public static bool gameRunning = false;
     public CanvasGroup BlackCurtain;
+    public ChatSystem chatSystem;
+
+    public DatablePlatform[] datablePlatforms;
 
     public Player player;
     public Transform playerT;
@@ -29,13 +32,34 @@ public class GameManager : MonoBehaviour {
         if(playerT.position.y <= -7) {
             instance.StartCoroutine(instance.RestartGame());
         }
+        bool platformIsNear = false;
+        for (int i = 0; i < datablePlatforms.Length; i++) {
+            DatablePlatform dp = datablePlatforms[i];
+            float distFromPlayer = Vector3.Distance(dp.transform.position, playerT.position);
+            if (distFromPlayer <= 7) {
+                if (chatSystem.CurrentPlatform != dp) {
+                    chatSystem.CurrentPlatform = dp;
+                    if (!dp.Friendly) {
+                        chatSystem.FadeIn();
+                    }
+                }
+                platformIsNear = true;
+                break;
+            }
+        }
+        if (!platformIsNear) {
+            if(chatSystem.CurrentPlatform != null) {
+                chatSystem.CurrentPlatform = null;
+                chatSystem.FadeOut();
+            }
+        }
     }
 
     public static void HandlePlatformHit(RaycastHit2D hit) {
         if (hit.transform.gameObject.layer == DatablePlatform.DATABLE_PLATFORM_LAYER) {
             DatablePlatform dp = hit.transform.gameObject.GetComponent<DatablePlatform>();
             if (dp != null) {
-                if (!dp.friendly) {
+                if (!dp.Friendly) {
                     gameRunning = false;
                     instance.StartCoroutine(instance.RestartGame());
                 }
@@ -44,7 +68,7 @@ public class GameManager : MonoBehaviour {
     }
 
     private static readonly WaitForSeconds wait = new WaitForSeconds(0.3f);
-    private const float FadeTime = 0.5f;
+    private const float FadeTime = 0.4f;
     private IEnumerator RestartGame() {
         float progress = 0;
         float elapsedTime = 0;
