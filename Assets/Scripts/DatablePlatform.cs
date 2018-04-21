@@ -98,6 +98,12 @@ public class DatablePlatform : MonoBehaviour {
                 dest = new DialogNode {
                     text = "Sigh...",
                 }
+            },
+            new DialogOption {
+                text = "",
+                dest = new DialogNode {
+                    text = "Sigh...",
+                }
             }
         }
     };

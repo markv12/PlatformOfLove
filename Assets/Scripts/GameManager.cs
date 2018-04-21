@@ -57,6 +57,22 @@ public class GameManager : MonoBehaviour {
                 chatSystem.FadeOut();
             }
         }
+
+        if ((Input.GetKey(KeyCode.RightControl) || Input.GetKey(KeyCode.LeftControl)) && Input.GetKeyDown(KeyCode.Q)) {
+            QuitGame();
+        }
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            QuitGame();
+        }
+    }
+
+    private static void QuitGame() {
+#if UNITY_EDITOR
+        if (Application.isEditor) {
+            UnityEditor.EditorApplication.isPlaying = false;
+        } else
+#endif
+            Application.Quit();
     }
 
     public static void HandlePlatformHit(RaycastHit2D hit) {
