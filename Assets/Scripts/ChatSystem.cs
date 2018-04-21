@@ -16,7 +16,7 @@ public class ChatSystem : MonoBehaviour {
                 transform.position = currentPlatform.transform.position;
                 PlatformSpeech.transform.localPosition = currentPlatform.mainTextPosition;
                 OptionContainer.localPosition = currentPlatform.optionsPosition;
-                ShowDialogNode(currentPlatform.rootNode);
+                ShowDialogNode(currentPlatform.myDialogTree);
             } else {
                 currentNode = null;
             }
@@ -35,7 +35,7 @@ public class ChatSystem : MonoBehaviour {
             if(Input.anyKeyDown && ContainsNumber(Input.inputString)){
                 char numberPressed = Input.inputString.ToCharArray()[0];
                 int n = (int)char.GetNumericValue(numberPressed) - 1;
-                if(n < currentNode.options.Length) {
+                if(currentNode.options != null && n < currentNode.options.Length) {
                     ShowDialogNode(currentNode.options[n].dest);
                 }
             }

@@ -24,7 +24,20 @@ public class DatablePlatform : MonoBehaviour {
         }
     }
 
-    public DialogNode rootNode = new DialogNode {
+    public DialogNode myDialogTree {
+        get {
+            return dialogTrees[name];
+        }
+    }
+
+    static DatablePlatform() {
+        dialogTrees.Add("Platform1", p1DialogTree);
+        dialogTrees.Add("Platform2", p2DialogTree);
+    }
+
+    public static Dictionary<string,DialogNode> dialogTrees = new Dictionary<string, DialogNode>();
+
+    private static DialogNode p1DialogTree = new DialogNode {
         text = "What do you want?",
         options = new DialogOption[] {
             new DialogOption {
@@ -77,7 +90,15 @@ public class DatablePlatform : MonoBehaviour {
         }
     };
 
-    void Update() {
-
-    }
+    private static DialogNode p2DialogTree = new DialogNode {
+        text = "Being a platform is hard, maybe I should quit.",
+        options = new DialogOption[] {
+            new DialogOption {
+                text = "Yeah, maybe you should.",
+                dest = new DialogNode {
+                    text = "Sigh...",
+                }
+            }
+        }
+    };
 }

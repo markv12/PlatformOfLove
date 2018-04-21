@@ -230,6 +230,7 @@ MonoBehaviour:
   deathMessage: Rejected!
   mainTextPosition: {x: 0, y: 20, z: 0}
   optionsPosition: {x: 58, y: 10, z: 0}
+  dialogTreeIndex: 0
 --- !u!1 &203943571
 GameObject:
   m_ObjectHideFlags: 0
@@ -2551,6 +2552,7 @@ MonoBehaviour:
   deathMessage: Saddened!
   mainTextPosition: {x: -48, y: -7, z: 0}
   optionsPosition: {x: 52, y: 0, z: 0}
+  dialogTreeIndex: 1
 --- !u!61 &1900378864
 BoxCollider2D:
   m_ObjectHideFlags: 0
