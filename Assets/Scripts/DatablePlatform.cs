@@ -8,6 +8,7 @@ public class DatablePlatform : MonoBehaviour {
     public SpriteRenderer image;
     public Sprite happySprite;
     public Sprite angrySprite;
+    public string deathMessage;
 
     private bool friendly = false;
     public bool Friendly {
@@ -44,7 +45,21 @@ public class DatablePlatform : MonoBehaviour {
                             text = "I've never seen such a beautiful platform before.",
                             dest = new DialogNode {
                                 text = "You're such a charmer!",
-                                speshi = SpeshI.MakeFriendly
+                                options = new DialogOption[] {
+                                    new DialogOption {
+                                        text = "So can I step on you now?",
+                                        dest = new DialogNode {
+                                            text = "Certainly!",
+                                            speshi = SpeshI.MakeFriendly
+                                        }
+                                    },
+                                    new DialogOption {
+                                        text = "Can I step on you in the biblical sense?",
+                                        dest = new DialogNode {
+                                            text = "Woah what?! no way!"
+                                        }
+                                    }
+                                }
                             }
                         }
                     }

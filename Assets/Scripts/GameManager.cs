@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : MonoBehaviour {
     public static GameManager instance;
     public static bool gameRunning = false;
     public CanvasGroup BlackCurtain;
+    public TMP_Text deathText;
+    private static string lastDeathMessage;
+
     public ChatSystem chatSystem;
 
     public DatablePlatform[] datablePlatforms;
@@ -18,6 +21,7 @@ public class GameManager : MonoBehaviour {
     private static bool firstGame = true;
 
 	void Awake () {
+        deathText.text = lastDeathMessage;
         instance = this;
         playerT = player.transform;
         if (!firstGame) {
@@ -30,7 +34,7 @@ public class GameManager : MonoBehaviour {
 
     void Update() {
         if(playerT.position.y <= -7) {
-            instance.StartCoroutine(instance.RestartGame());
+            instance.StartCoroutine(instance.RestartGame("Dead!"));
         }
         bool platformIsNear = false;
         for (int i = 0; i < datablePlatforms.Length; i++) {
@@ -61,7 +65,7 @@ public class GameManager : MonoBehaviour {
             if (dp != null) {
                 if (!dp.Friendly) {
                     gameRunning = false;
-                    instance.StartCoroutine(instance.RestartGame());
+                    instance.StartCoroutine(instance.RestartGame(dp.deathMessage));
                 }
             }
         }
@@ -69,7 +73,9 @@ public class GameManager : MonoBehaviour {
 
     private static readonly WaitForSeconds wait = new WaitForSeconds(0.3f);
     private const float FadeTime = 0.4f;
-    private IEnumerator RestartGame() {
+    private IEnumerator RestartGame(string deathMessage) {
+        lastDeathMessage = deathMessage;
+        deathText.text = deathMessage;
         float progress = 0;
         float elapsedTime = 0;
         while (progress <= 1) {
