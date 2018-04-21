@@ -76,6 +76,8 @@ public class GameManager : MonoBehaviour {
     private IEnumerator RestartGame(string deathMessage) {
         lastDeathMessage = deathMessage;
         deathText.text = deathMessage;
+        deathText.fontSize = 150;
+        deathText.enableWordWrapping = false;
         float progress = 0;
         float elapsedTime = 0;
         while (progress <= 1) {

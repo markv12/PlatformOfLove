@@ -10,6 +10,9 @@ public class DatablePlatform : MonoBehaviour {
     public Sprite angrySprite;
     public string deathMessage;
 
+    public Vector3 mainTextPosition;
+    public Vector3 optionsPosition;
+
     private bool friendly = false;
     public bool Friendly {
         get {

@@ -13,9 +13,10 @@ public class ChatSystem : MonoBehaviour {
         set {
             currentPlatform = value;
             if (currentPlatform != null) {
-                transform.position = currentPlatform.transform.position + new Vector3(0, 2.5f, 0);
+                transform.position = currentPlatform.transform.position;
+                PlatformSpeech.transform.localPosition = currentPlatform.mainTextPosition;
+                OptionContainer.localPosition = currentPlatform.optionsPosition;
                 ShowDialogNode(currentPlatform.rootNode);
-
             } else {
                 currentNode = null;
             }
@@ -24,6 +25,7 @@ public class ChatSystem : MonoBehaviour {
 
     public TMP_Text PlatformSpeech;
     public TMP_Text[] Options;
+    public Transform OptionContainer;
 
     public CanvasGroup canvasGroup;
 

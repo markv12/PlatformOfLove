@@ -60,7 +60,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 67
+  field of view: 70
   orthographic: 0
   orthographic size: 6
   m_Depth: -1
@@ -100,4 +100,4 @@ MonoBehaviour:
   lookAheadDstX: 4
   lookSmoothTimeX: 0.5
   verticalSmoothTime: 0.1
-  focusAreaSize: {x: 3, y: 3}
+  focusAreaSize: {x: 3, y: 4}

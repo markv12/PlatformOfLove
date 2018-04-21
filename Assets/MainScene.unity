@@ -228,6 +228,8 @@ MonoBehaviour:
   happySprite: {fileID: 21300000, guid: dc326bb4e5bdac24ba787e847aa9f8b8, type: 3}
   angrySprite: {fileID: 21300000, guid: aea493b0550dfd24e94f779aaf7dda2f, type: 3}
   deathMessage: Rejected!
+  mainTextPosition: {x: 0, y: 20, z: 0}
+  optionsPosition: {x: 58, y: 10, z: 0}
 --- !u!1 &203943571
 GameObject:
   m_ObjectHideFlags: 0
@@ -1354,7 +1356,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 46, y: 5}
+  m_SizeDelta: {x: 52, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1211014806
 MonoBehaviour:
@@ -1403,8 +1405,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 3.4
-  m_fontSizeBase: 3.4
+  m_fontSize: 3.7
+  m_fontSizeBase: 3.7
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1924,7 +1926,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_enableWordWrapping: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_firstOverflowCharacterIndex: 0
@@ -2286,6 +2288,7 @@ MonoBehaviour:
   - {fileID: 1051870429}
   - {fileID: 503896411}
   - {fileID: 1788274462}
+  OptionContainer: {fileID: 330008103}
   canvasGroup: {fileID: 1712497989}
 --- !u!225 &1712497989
 CanvasGroup:
@@ -2546,6 +2549,8 @@ MonoBehaviour:
   happySprite: {fileID: 21300000, guid: 4c6a3b97e40bce048a2ebe15a1c87136, type: 3}
   angrySprite: {fileID: 21300000, guid: dafdae8e0d8633c4f93785fa0324bbcc, type: 3}
   deathMessage: Saddened!
+  mainTextPosition: {x: -48, y: -7, z: 0}
+  optionsPosition: {x: 52, y: 0, z: 0}
 --- !u!61 &1900378864
 BoxCollider2D:
   m_ObjectHideFlags: 0
