@@ -34,6 +34,7 @@ public class DatablePlatform : MonoBehaviour {
         dialogTrees.Add("Platform1", p1DialogTree);
         dialogTrees.Add("Platform2", p2DialogTree);
         dialogTrees.Add("Platform3", p3DialogTree);
+        dialogTrees.Add("Platform4", p4DialogTree);
     }
 
     public static Dictionary<string,DialogNode> dialogTrees = new Dictionary<string, DialogNode>();
@@ -130,7 +131,7 @@ public class DatablePlatform : MonoBehaviour {
                                                 new DialogOption {
                                                     text = "Yes",
                                                     dest = new DialogNode {
-                                                        text = "Thanks, I feel a bit better",
+                                                        text = "Thanks, I feel a bit better.",
                                                         speshi = SpeshI.MakeFriendly
                                                     }
                                                 },
@@ -184,7 +185,7 @@ public class DatablePlatform : MonoBehaviour {
                                 text = "I'm flattered. But are you sure it's safe?",
                                 options = new DialogOption [] {
                                     new DialogOption {
-                                        text = "I'll only step a little bit",
+                                        text = "I'll only step a little bit.",
                                         dest = new DialogNode {
                                             text = "Yeah right."
                                         }
@@ -200,9 +201,73 @@ public class DatablePlatform : MonoBehaviour {
                             }
                         },
                         new DialogOption {
-                            text = "I don't know how I'm supposed to feel",
+                            text = "I don't know how I'm supposed to feel.",
                             dest = new DialogNode {
-                                text = "That sounds like a personal problem"
+                                text = "That sounds like a personal problem."
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    };
+    private static DialogNode p4DialogTree = new DialogNode {
+        text = "Hey dude, what's happening?",
+        options = new DialogOption[] {
+            new DialogOption {
+                text = "I'm just trying to get through.",
+                dest = new DialogNode {
+                    text = "What's the rush?",
+                    options = new DialogOption[] {
+                        new DialogOption {
+                            text = "I have other Ludem Dare games to review.",
+                            dest = new DialogNode {
+                                text = "Understandable, what do you think of this game?",
+                                options = new DialogOption[] {
+                                   new DialogOption {
+                                        text = "It's Terrible!",
+                                        dest = new DialogNode {
+                                            text = "Is it the art?",
+                                            options = new DialogOption[] {
+                                                new DialogOption {
+                                                    text = "Yes.",
+                                                    dest = new DialogNode {
+                                                        text = "Fair enough.",
+                                                        speshi = SpeshI.MakeFriendly
+                                                    }
+                                                },
+                                                 new DialogOption {
+                                                    text = "No.",
+                                                    dest = new DialogNode {
+                                                        text = "At least you know talent when you see it.",
+                                                        speshi = SpeshI.MakeFriendly
+                                                    }
+                                                },
+                                                 new DialogOption {
+                                                    text = "It's everything.",
+                                                    dest = new DialogNode {
+                                                        text = "Oh well, there's always next Ludem Dare.",
+                                                        speshi = SpeshI.MakeFriendly
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    new DialogOption {
+                                        text = "It's so-so.",
+                                        dest = new DialogNode {
+                                            text = "Constructive criticism is always appreciated!",
+                                            speshi = SpeshI.MakeFriendly
+                                        }
+                                   },
+                                    new DialogOption {
+                                        text = "It's great!",
+                                        dest = new DialogNode {
+                                            text = "Glad to hear it, see you around dude!",
+                                            speshi = SpeshI.MakeFriendly
+                                        }
+                                    },
+                                }
                             }
                         }
                     }
