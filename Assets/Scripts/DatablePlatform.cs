@@ -35,6 +35,7 @@ public class DatablePlatform : MonoBehaviour {
         dialogTrees.Add("Platform2", p2DialogTree);
         dialogTrees.Add("Platform3", p3DialogTree);
         dialogTrees.Add("Platform4", p4DialogTree);
+        dialogTrees.Add("Platform5", p5DialogTree);
     }
 
     public static Dictionary<string,DialogNode> dialogTrees = new Dictionary<string, DialogNode>();
@@ -268,6 +269,94 @@ public class DatablePlatform : MonoBehaviour {
                                         }
                                     },
                                 }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    };
+
+    private static DialogNode p5DialogTree = new DialogNode {
+        text = "Greetings",
+        options = new DialogOption[] {
+            new DialogOption {
+                text = "What are you?",
+                dest = new DialogNode {
+                    text = "I go by many names, you may call me Greb.",
+                    options = new DialogOption[] {
+                        new DialogOption {
+                            text = "That's a hot name...I think.",
+                            dest = new DialogNode {
+                                text = "Indeed it is, in fact, it is too hot for you, begone.",
+                            }
+                        },
+                        new DialogOption {
+                            text = "That name sounds familiar.",
+                            dest = new DialogNode {
+                                text = "I see you have read the sacred scripture, tell me what is your favorite verse?",
+                                options = new DialogOption[] {
+                                    new DialogOption {
+                                        text = "Sneff T-8",
+                                        dest = new DialogNode {
+                                            text = "You must think you're pretty deep, typical."
+                                        }
+                                    },
+                                    new DialogOption {
+                                        text = "Greeb Q-16",
+                                        dest = new DialogNode {
+                                            text = "You've read the forbidden texts? Heretic!"
+                                        }
+                                    },
+                                    new DialogOption {
+                                        text = "Phelf AB-0",
+                                        dest = new DialogNode {
+                                            text = "Clearly you are a scholar of the highest magnitude, let us embrace at once!",
+                                            speshi = SpeshI.MakeFriendly
+                                        }
+                                    },
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            new DialogOption {
+                text = "Is that hair?",
+                dest = new DialogNode {
+                    text = "Have my follicles caught your attention?",
+                    options = new DialogOption[] {
+                        new DialogOption {
+                            text = "I think I'm going to throw up.",
+                            dest = new DialogNode {
+                                text = "And rightly so! Tell me, in which direction do you prefer to throw up?",
+                                options = new DialogOption[] {
+                                    new DialogOption{
+                                       text = "SouthEast",
+                                       dest = new DialogNode {
+                                           text = "I'm surprised you're willing to admit that."
+                                       }
+                                    },
+                                    new DialogOption {
+                                        text = "East",
+                                        dest = new DialogNode {
+                                            text = "Unorthodox but enticing. Quickly, cling to me!",
+                                            speshi = SpeshI.MakeFriendly
+                                        }
+                                    },
+                                    new DialogOption {
+                                        text = "Left",
+                                        dest = new DialogNode {
+                                            text = "You clearly need guidance in your life."
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        new DialogOption {
+                            text = "Very much so.",
+                            dest = new DialogNode {
+                                text = "The thirst is real, cool your jets."
                             }
                         }
                     }

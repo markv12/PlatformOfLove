@@ -12,7 +12,7 @@ public class ChatSystem : MonoBehaviour {
         }
         set {
             currentPlatform = value;
-            if (currentPlatform != null) {
+            if (currentPlatform != null && !currentPlatform.Friendly) {
                 transform.position = currentPlatform.transform.position;
                 PlatformSpeech.transform.localPosition = currentPlatform.mainTextPosition;
                 OptionContainer.localPosition = currentPlatform.optionsPosition;
