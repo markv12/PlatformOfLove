@@ -356,7 +356,7 @@ public class DatablePlatform : MonoBehaviour {
                         new DialogOption {
                             text = "Very much so.",
                             dest = new DialogNode {
-                                text = "The thirst is real, cool your jets."
+                                text = "The thirst is real, restrain yourself."
                             }
                         }
                     }
