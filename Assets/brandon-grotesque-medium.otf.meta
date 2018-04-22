@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: a68e71b5666ff6f4e9f6df9ec9af0d8b
-timeCreated: 1524286956
+guid: 1e57db129d2ef6d45ae0bc2c048fabf1
+timeCreated: 1524373340
 licenseType: Free
 TrueTypeFontImporter:
   externalObjects: {}
@@ -10,9 +10,9 @@ TrueTypeFontImporter:
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: BD Cartoon Shout
+  fontName: Brandon Grotesque
   fontNames:
-  - BD Cartoon Shout
+  - Brandon Grotesque
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
